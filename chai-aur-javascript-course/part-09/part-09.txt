@@ -1,0 +1,29 @@
+# PRIMITIVE DATATYPES :
+    7 Types : String, Number, Boolean, null, undefined, Symbol, BigInt
+
+# REFERENCE / NON PRIMITIVE DATATYPES :
+    3 Types : Array, Object, Function
+
+# CALL BY VALUE :
+    When a variable is passed as a parameter to a function, if any changes are made to the parameter, the original variable will remain unaffected. This is known as call by value and this is true for all values having a primitive data type.
+
+# CALL BY REFERENCE : 
+    When a variable’s reference(address) and not its value is passed to a function’s parameter, any changes made to the parameter will update the original variable reference. This is known as call by reference and this is true for all values having a non-primitive data type.
+
+# STATIC TYPED LANGUAGES : 
+    You can see several variables that were declared using special prefixes or keywords, for example, variable “a” was declared with prefix ‘String’ and this prefix means that we declare a variable of string type and its value must be always string.
+    On the next line we declare integer variable and assign value 10 to it.
+    But if you will try to re-assign the value of other types to the variable that was defined as an integer we will get an error and this happens in statically typed languages like for example typescript.
+    It means that type of each variable is defined before code is executed.
+    eg:
+        String a = "abc";
+        int b = 10;
+        b = "xyz";  //Error
+
+# DYNAMIC TYPED LANGUAGES :
+    In this example, we assign value to the variable “a” without specifying its type and type of the variable will be set dynamically depending on the value that we assigned to the variable.
+    That’s why it is possible to assign, for example, string “abc” to the variable a, and later on re-assign another value, for example, Number.
+    It means that type of the variable is set dynamically during code execution and moreover this type can change during code execution.
+    eg: 
+        a = "abc";  //String
+        a = 10;  //Number

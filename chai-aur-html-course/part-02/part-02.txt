@@ -1,0 +1,21 @@
+# HTML : 
+    HTML stands for HyperText Markup Language. It is used to design the web pages. With the help of HTML, you can create a complete website structure. HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages and markup language defines the text document within the tag that define the structure of web pages.
+    HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.
+
+# <!DOCTYPE html> :
+    All HTML documents must start with a <!DOCTYPE> declaration. The declaration is not an HTML tag. It is an "information" to the browser about what document type to expect.
+    In HTML 5, the declaration is simple:
+        <!DOCTYPE html>
+
+# HTML STRUCTURE :
+    <!DOCTYPE html>
+    <html> : html is grand parent of title, h1 and p | parent of head and body 
+        <head> : head is child of html | parent of title
+            <title>Page Title</title> : title is grand child of html | child of head
+        </head>
+        <body> : body is child of html | sibling of head | parent of h1 and p
+            <h1>My First Heading</h1> : h1 grand child of html | child of body | sibling of p
+            <p>My first paragraph.</p> : p is grand child of html | child of body | sibling of h1
+        </body>
+    </html>
+

@@ -1,0 +1,22 @@
+# What Is Apache?
+
+    Apache is a free and open-source software that allows users to deploy their websites on the internet. It is one of the oldest and most reliable web server software maintained by the Apache Software Foundation, with the first version released in 1995. 
+
+# What is Apache Web Server ?
+
+    Although we call Apache a web server, it is not a physical server, but rather a software that runs on an HTTP server. Its job is to establish a connection between a server and the browsers of website visitors (Firefox, Google Chrome, Safari, etc.) while delivering files back and forth between them (client-server structure). The Apache software is also compatible with any operating system, from Windows to Unix. 
+    When a visitor wants to load a page on your website, for instance, the homepage or your “About Us” page, their browser sends a request to your server, and Apache returns a response with all the requested files (text, images, etc.).
+    It serves by default index.html file
+    If index.html file is not there in the server then it serves default.html file but it was old process, Now servers only serves index.html file
+
+# EMMET : 
+    Emmet is a web-developer’s toolkit that can greatly improve your HTML & CSS workflow.
+    When you start typing an Emmet abbreviation, you will see the abbreviation displayed in the suggestion list in the form of a dropdown. If you type the short form (like element name) then you will see a preview of the expansion.
+    Basically, most text editors out there allow you to store and re-use commonly used code chunks, called “snippets”. While snippets are a good way to boost your productivity, all implementations have common pitfalls: you have to define the snippet first and you can’t extend them in runtime.
+    Emmet takes the snippets idea to a whole new level: you can type CSS-like expressions that can be dynamically parsed, and produce output depending on what you type in the abbreviation. Emmet is developed and optimised for web-developers whose workflow depends on HTML/XML and CSS, but can be used with programming languages too.
+
+# LIVE SERVER :
+    Generally, when we make any change in our code, to see those changes on the browser we need to manually refresh the page to see the changes happening. Here the live server extension comes into the picture. After it has been installed, an automated localhost will be able to run in your browser, which you can start with a single button. Once you make changes in your code or write something new, after saving it, the browser will auto-refresh itself, then you will be able to see the changes quickly and automatically. The live server enables you to open an HTML document, and it runs a server for you and opens a browser window with the file in it.
+
+# LIVE SERVER PREVIEW :
+    The Live Preview extension will open a preview pane on the side of your editor, allowing you to see your HTML code rendered in real-time

@@ -1,0 +1,106 @@
+<!-- ABHIGYANAM'S QUESTION -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        color: brown;
+      }
+      h2 {
+        color: brown;
+        margin-right: 2vw;
+      }
+      p {
+        font-size: 3vw;
+      }
+      form {
+        display: flex;
+        gap: 4vw;
+      }
+      input {
+        font-size: 3vw;
+        width: 4vw;
+      }
+      label {
+        font-size: 2vw;
+      }
+      button {
+        width: 7vw;
+        height: 3vw;
+        font-size: 2vw;
+        margin-top: 2vw;
+        background-color: pink;
+        border: none;
+        border-radius: 2vw;
+        padding: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(229, 148, 42);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>[12, 34, 23, 45, 23, 45, 0, 11, 67, 78]</h1>
+      <p>Enter 2 index numbers of the above array to add the elements</p>
+      <form>
+        <label for="">
+          Index no. 1:
+          <input type="text" id="index1" />
+        </label>
+        <label for="">
+          Index no. 2:
+          <input type="text" id="index2" />
+        </label>
+      </form>
+      <button>Add</button>
+      <h2>Result : <span></span></h2>
+    </div>
+    <div>
+      <table border="1" style="border-collapse: collapse">
+        <tr>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+          <td width="25" height="15" bgcolor="white"></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const btn = document.querySelector("button");
+      const rslt = document.querySelector("span");
+
+      const array = [12, 34, 23, 45, 23, 45, 0, 11, 67, 78];
+
+      btn.addEventListener("click", () => {
+        const index1 = form.index1.value;
+        const index2 = form.index2.value;
+        const sum = array[Number(index1)] + array[Number(index2)];
+        rslt.innerHTML = sum;
+      });
+    </script>
+  </body>
+</html>

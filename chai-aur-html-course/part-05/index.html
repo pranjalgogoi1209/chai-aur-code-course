@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body{
+        color: green;
+        }
+        /* 2nd most priority */
+    </style>
+
+    <!-- EXTERNAL CSS LINKING -->
+    <link rel="stylesheet" href="style.css">
+    <!-- external css get least priority but if we link it after internal css, then it overwrite internal css and get 2nd most priority -->    
+</head>
+<body>
+    <h1 style="background-color: orange;">Heading 1 : Normal Color Name</h1>
+    <h1 style="background-color: #00e17f;">Heading 2 : Hax Value of Color</h1>
+    <h1 style="background-color: hsl(154, 25%, 27%);">Heading 3 : HSL value of Color : Hue, Saturation, lightness</h1>
+    <h1 style="background-color: hsla(154, 25%, 27%, 0.5);">Heading 3 : HSLA value of Color : Hue, Saturation, lightness, alpha</h1>
+    <h1 style="background-color: rgb(94, 34, 45)">Heading 4 : RGB value of Color : Reg green blue</h1>
+    <h1 style="background-color: rgb(94, 34, 45, 0.5)">Heading 4 : RGB value of Color : Reg green blue alpha</h1>
+    <!-- alpha value : 0 to 1 : opacity -->
+
+    <!-- INLINE CSS -->
+    <h3 style="color:red">I am inline css</h3>
+    <!-- Most priority -->
+
+
+    <!-- QUOTATION -->
+    <p>
+        <!-- HELPS IN SEO -->
+        <blockquote cite="pranjal gogoi">
+        <!-- cite is use for the reference of whoose quote is it to rank in SEO -->
+            Xomoyor kam 
+            xomoyor agot 
+            koribo lage
+        </blockquote>
+        <q>
+            Xomoyor kam
+            xomoyor agot
+            koribo lage
+        </q>
+        <!-- we don't use q because it give quotation by default, we can put double quotes with the help of before and after css -->
+
+    </p>
+    
+    <abbr title="Hyper text markup language">HTML</abbr>
+    <!-- abbravitaion , short word -->
+    <address>Howraghat</address>
+    <p><cite>Ramayan</cite>: Ram Siya Ram ... Lorem ipsum, dolor sit amet consectetur adipisicing elit. At, fugit? Rem, culpa, voluptatum, commodi unde perspiciatis odio blanditiis voluptatem tempore eveniet quidem molestias.</p>
+    <!-- The <cite> tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.). 
+    Note: A person's name is not the title of a work. -->
+
+    <bdo dir="rtl">Khana khake jana ha</bdo>
+    <hr>
+    <bdo dir="ltr">Khana khake jana ha</bdo>
+    <p>
+        <a href="mailto:gogoipranjal2019@gmial.com">Mail</a>
+        <a href="tel:7086676284">Telephone</a>
+    </p>
+</body>
+</html>
