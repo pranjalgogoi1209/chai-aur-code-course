@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TITLE OF THE PAGE</title>
+    <!-- for title of the page -->
+
     <link rel="stylesheet" href="./head.css" />
     <!-- for css -->
 
     <meta charset="UTF-16" />
     <!-- for emoji support -->
 
-    <meta />
+    <meta name="keywords" content="html, web" />
+    <!-- for keywords -->
+
+    <meta name="description" content="this is a webpage tutorial" />
+    <!-- for description -->
+
+    <meta http-equiv="refresh" content="2" />
+    <!-- for refresh in every 2 seconds -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- for mobile devices -->
+
+    <base href="" />
   </head>
   <body>
     <h1>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, sequi?
+      Lorem ipsum <span></span> dolor sit, amet consectetur adipisicing elit.
+      Aperiam, sequi?
     </h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolorum
@@ -23,5 +37,12 @@
       eligendi vel velit reprehenderit quia porro voluptates molestiae. Numquam
       laborum deleniti vel autem cum?
     </p>
+
+    <script>
+      const random = ~~(Math.random() * 10) + 1;
+      const span = document.querySelector("span");
+      span.innerHTML = random;
+      console.log(span);
+    </script>
   </body>
 </html>
