@@ -1,0 +1,59 @@
+# JAVASCRIPT EXECUTION CONTEXT =>
+
+    * Global Execution Context.
+    * Function Execution Context.
+    * Eval Execution Context : Mongoose
+
+# CALL STACK
+
+# BROWSER => Global Execution Context is window object.
+
+# HOW JAVASCRIPT EXECUTE CODE =>
+
+    * Memory Creation Phase.
+    * Execution Phase.
+
+# HOW JAVASCRIPT EXECUTE CODE (STEP BY STEP) =>
+
+    * Eg. code :
+        const val1 = 10;
+        const val2 = 5;
+        const addNum = (num1, num2) => {
+            const total = num1  + num2;
+            return total;
+        }
+
+        const result1 = addNum(val1, val2);
+        const result2 = addNum(10, 2);
+    * First Step - Run Global Execution Context and allocate it into this keyword.
+    * Second Step - Memory Creation Phase :
+        val1 = undefined
+        val2 = undefined
+        addNum = defination
+        result1 = undefined
+        result2 = undefined
+    * Third Step - Execution Phase :
+        val1 <= 10
+        val2 <= 5
+        addNum = New variable environment + Execution thread :
+            i. First Step - Memory Creation Phase :
+                val1 = undefined
+                val2 = undefined
+                total = undefined
+            ii. Second Step - Execution Phase :
+                num1 = 10
+                num2 = 5
+                total = 15 : Return it to Global Execution Context.
+            iii. After Completion environment get delete.
+        result1 = 15
+        addNum = New variable environment + Execution thread :
+            i. First Step - Memory Creation Phase :
+                val1 = undefined
+                val2 = undefined
+                total = undefined
+            ii. Second Step - Execution Phase :
+                num1 = 10
+                num2 = 2
+                total = 12 : Return it to Global Execution Context.
+            iii. After Completion environment get delete.
+        result2 = 12
