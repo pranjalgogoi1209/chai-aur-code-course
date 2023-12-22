@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM learning</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 class="heading">DOM learning on Chai aur Code</h1>
+      <p id="content" class="old-class" style="font-size: 2vw">
+        Lorem ipsum dolor sit amet.
+        <span style="display: none">
+          Hidden content, only can see using innerContent property
+        </span>
+      </p>
+      <h2 id="h2-id" class="h2-class">First heading</h2>
+      <h2 id="h2-id" class="h2-class">Second heading</h2>
+      <h2 id="h2-id" class="h2-class">Third heading</h2>
+      <form>
+        <input type="text" />
+        <input type="password" />
+        <input type="email" />
+      </form>
+    </div>
+
+    <script>
+      const p = document.getElementById("content");
+      console.log(p.id);
+
+      // INNER HTML
+      p.innerHTML = `${p.innerHTML} New content`;
+      // we are replacing the old value of innerHTML with new value of innerHTML, innerHTML gives us all the html tag with text node of the element
+
+      // INNER TEXT
+      console.log("***INNER TEXT***");
+      console.log(p.innerText);
+      // innerText gives us only the visible content of the element
+
+      // TEXT CONTENT
+      console.log("***INNER CONTENT***");
+      console.dir(p.textContent);
+      // textContent gives us all the content including visible and invisible of the element
+
+      // SET ATTRIBUTE
+      p.setAttribute("class", "new-class");
+      // if class attribute is already present in the element, then it will replace the old value of class attribute with new value
+
+      // GET ATTRIBUTE
+      console.log("***GET ATTRIBUTE***");
+      console.log(p.getAttribute("class"));
+
+      // STYLE
+      p.style.backgroundColor = "#ccc";
+      p.style.color = "#212121";
+      p.style.borderRadius = "2vw";
+      p.style.padding = "2vw";
+      p.style.textAlign = "center";
+      p.style.fontWeight = "bold";
+      // if we want to add inline css in an element, then we can use style property, it will not replace old value
+
+      // QUERY SELECTOR
+      // const h2 = document.querySelector("h2");
+      // const h2 = document.querySelector("#h2-id");
+      const h2 = document.querySelector(".h2-class");
+      h2.innerText = "First heading + query selector";
+      // querySelector selects only the first element
+
+      // QUERY SELECTOR INSIDE QUERY SELECTOR
+      const form = document.querySelector("form");
+      /* const input = form.querySelector("input");
+      input.style.backgroundColor = "pink"; */
+      form.querySelector("input").style.backgroundColor = "pink";
+
+      // QUERY SELECTOR ALL
+      console.log("***QUERY SELECTOR ALL***");
+      const allInputs = form.querySelectorAll("input");
+      console.log(allInputs);
+      // allInputs[0].style.fontSize = "4vw";
+      allInputs.forEach(item => {
+        item.style.fontSize = "4vw";
+      });
+      // querySelectorAll selects all the elements and it gives us nodelist
+
+      // CONVERT NODELIST TO ARRAY
+      console.log("***CONVERT NODELIST TO ARRAY***");
+      const newArray = Array.from(allInputs);
+      console.log(newArray);
+      // or
+      const newArray2 = [...allInputs];
+      console.log(newArray2);
+
+      // GET ELEMENTS BY CLASSNAME
+      console.log("***GET ELEMENTS BY CLASSNAME***");
+      const allH2Class = document.getElementsByClassName("h2-class");
+      console.log(allH2Class);
+      // getElementsByClassName selects all the elements and it gives us htmlcollection
+
+      // CONVERT HTML COLLECTION TO ARRAY
+      console.log("***CONVERT HTML COLLECTION TO ARRAY***");
+      const newArray3 = Array.from(allH2Class);
+      console.log(newArray3);
+      // or
+      const newArray4 = [...allH2Class];
+      console.log(newArray4);
+    </script>
+  </body>
+</html>

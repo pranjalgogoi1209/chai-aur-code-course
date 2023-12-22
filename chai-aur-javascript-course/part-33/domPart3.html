@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM PART-3</title>
+    <style>
+      .bg {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <div class="parent">
+      <li class="day">Monday</li>
+      <li class="day">Tuesday</li>
+      <li class="day">Wednesday</li>
+      <li class="day">Thursday</li>
+    </div>
+    <form>
+      <input type="text" name="element" placeholder="enter element" />
+      <input type="text" name="innerText" placeholder="enter innerText" />
+      <input type="text" name="bgColor" placeholder="enter bgColor" />
+      <button type="submit">submit</button>
+    </form>
+    <script>
+      // CHILDREN
+      console.log("***CHILDREN***");
+      const div = document.querySelector(".parent");
+      console.log(div.children);
+      for (let i = 0; i < div.children.length; i++) {
+        console.log(div.children[i].innerText);
+        div.children[i].style.color = "orange";
+      }
+
+      // FIRST ELEMENT CHILD
+      console.log("***FIRST ELEMENT CHILD***");
+      console.log(div.firstElementChild.innerText);
+
+      // LAST ELEMENT CHILD
+      console.log("***LAST ELEMENT CHILD***");
+      console.log(div.lastElementChild.innerText);
+
+      // PARENT ELEMENT
+      console.log("***PARENT ELEMENT***");
+      const dayOne = document.querySelector(".day");
+      console.log(dayOne.parentElement);
+
+      // NEXT ELEMENT SIBLING
+      console.log("***NEXT ELEMENT SIBLING***");
+      console.log(dayOne.nextElementSibling.innerText);
+
+      // CHILD NODES
+      console.log("***CHILD NODES***");
+      console.log(div.childNodes);
+      // it counts line break as a text node
+
+      // CREATE ELEMENT & TEXT NODE & APPEND CHILD
+      console.log("***CREATE ELEMENT & TEXT NODE & APPEND CHILD***");
+      const customDiv = document.createElement("div");
+      const text1 = document.createTextNode("I am text node, ");
+      customDiv.appendChild(text1);
+      const text2 = document.createTextNode("I am new text node");
+      customDiv.appendChild(text2);
+
+      customDiv.id = ~~(Math.random() * 10 + 1);
+      customDiv.setAttribute("title", "custom div");
+      customDiv.style.color = "yellow";
+      // customDiv.innerText = "I am replacing old innerText"; // it replace old innerText
+      console.log(customDiv);
+
+      div.appendChild(customDiv);
+
+      // PRACTICAL EXAMPLE
+      const createElement = (element, innerText, bgColor) => {
+        const newElement = document.createElement(element);
+        newElement.innerText = innerText;
+        newElement.style.backgroundColor = bgColor;
+        newElement.style.padding = "4vw";
+        newElement.style.color = "black";
+        div.appendChild(newElement);
+        console.log(newElement);
+      };
+
+      const allDetails = [
+        {
+          element: "",
+          innerText: "",
+          bgColor: "",
+        },
+        /*  {
+          element: "h2",
+          innerText: "Krishna Yadav",
+          bgColor: "red",
+        },
+        {
+          element: "h3",
+          innerText: "Rahul singh",
+          bgColor: "blue",
+        },
+        {
+          element: "h4",
+          innerText: "Ishan Aggarwal",
+          bgColor: "pink",
+        },
+        {
+          element: "p",
+          innerText: "Shivam Prajapati",
+          bgColor: "green",
+        }, */
+      ];
+
+      const form = document.querySelector("form");
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        allDetails[0].element = form.children[0].value;
+        allDetails[0].innerText = form.children[1].value;
+        allDetails[0].bgColor = form.children[2].value;
+
+        /* allDetails.push({
+          element: form.children[0].value,
+          innerText: form.children[1].value,
+          bgColor: form.children[2].value,
+        }); */
+
+        allDetails.forEach(detail => {
+          const { element, innerText, bgColor } = detail;
+          createElement(element, innerText, bgColor);
+        });
+
+        console.log(allDetails);
+      });
+    </script>
+  </body>
+</html>

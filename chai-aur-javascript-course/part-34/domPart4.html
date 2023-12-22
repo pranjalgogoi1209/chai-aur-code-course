@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM PART-4</title>
+    <style>
+      .bg {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+    <script>
+      // FUNCTION WHICH ADD NEW LANGUAGE OPTIMIZE
+      const addLanguage = langName => {
+        const li = document.createElement("li");
+        // li.innerText = langName // not optimize
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+      };
+      addLanguage("Python");
+      addLanguage("Java");
+      addLanguage("C++");
+
+      // EDIT OPTIMIZE
+      const secondLi = document.querySelector("li:nth-child(2)");
+      // secondLi.innerText = "Typescript" // not optimize
+      const newLi = document.createElement("li");
+      newLi.appendChild(document.createTextNode("Typescript"));
+      secondLi.replaceWith(newLi);
+
+      // REMOVE
+      const lastLi = document.querySelector("li:last-child");
+      lastLi.remove();
+    </script>
+  </body>
+</html>
