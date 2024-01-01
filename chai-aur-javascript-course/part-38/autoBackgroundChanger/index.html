@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Background Changer</title>
+  </head>
+  <body>
+    <h1>START should change background color every second</h1>
+    <button class="start">START</button>
+    <button class="end">END</button>
+    <script>
+      const body = document.querySelector("body");
+
+      /* // my style
+      let interval;
+      document.querySelector(".start").addEventListener("click", () => {
+        interval = setInterval(() => {
+          const random1 = ~~(Math.random() * 1000);
+          const random2 = ~~(Math.random() * 1000);
+          const random3 = ~~(Math.random() * 1000);
+          body.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
+        }, 500);
+      });
+
+      document.querySelector(".end").addEventListener("click", () => {
+        clearInterval(interval);
+      }); */
+
+      // sir's style
+      const randomColor = () => {
+        let color = "#";
+        const hax = "0123456789ABCDEF";
+        for (let i = 0; i < 6; i++) {
+          color += hax[~~(Math.random() * 16)];
+        }
+        return color;
+      };
+
+      let interval;
+      document.querySelector(".start").addEventListener("click", () => {
+        interval = setInterval(() => {
+          body.style.backgroundColor = randomColor();
+        }, 500);
+      });
+
+      document.querySelector(".end").addEventListener("click", () => {
+        clearInterval(interval);
+        // for efficient code
+        interval = null;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .test {
+        height: 500px;
+        width: 500px;
+        border: 1px solid white;
+      }
+    </style>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <div class="test"></div>
+      <ul id="images">
+        <li>
+          <!-- onclick="alert('Not Recommended')" -->
+          <img
+            width="200px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+    <script>
+      // NOT RECOMMENDED
+      /*  document.getElementById("owl").onclick = function () {
+        alert("Not recommended");
+      }; */
+
+      // ADD EVENT LISTNER
+      /*  document.querySelector("#japan").addEventListener(
+        "click",
+        e => {
+          alert("RECOMMENDED");
+          console.log(e);
+        },
+        false // false is default
+      ); */
+
+      // IMPORTANT EVENTS
+      /*
+        TYPES OF EVENTS :
+            i. Browser event
+            ii. Environment event
+        type, timestamp, defaultPrevent
+        target, toElement, srcElement, currentTarget
+        clientX, clientY, screenX, screenY
+        altkey, ctrlkey, shiftkey, keyCode
+      */
+
+      // ADD CIRCLE WHERE YOU CLICK
+      const test = document.querySelector(".test");
+      test.addEventListener("click", e => {
+        const div = document.createElement("div");
+        console.log(e.timeStamp);
+        div.setAttribute(
+          "style",
+          `height: 20px; width: 20px; position: absolute; left: ${e.clientX}px; top: ${e.clientY}px; background-color: yellow; border-radius: 50%;`
+        );
+        test.appendChild(div);
+      });
+
+      // PROPAGATION
+      /* 
+        i. event bubbling : false : bottom to top
+        ii. event capturing : true : top to bottom
+      */
+      // EVENT BUBBLING
+      console.log("***EVENT BUBBLING***");
+      /* document.querySelector("#images").addEventListener(
+        "click",
+        e => {
+          console.log("clicked on ul");
+        },
+        false // it will run later
+      );
+
+      document.querySelector("#river").addEventListener(
+        "click",
+        e => {
+          console.log("clicked on river image");
+        },
+        false
+      ); */
+      // EVENT CAPTURING
+      console.log("***EVENT CAPTURING***");
+      /* document.querySelector("#images").addEventListener(
+        "click",
+        e => {
+          console.log("clicked on ul");
+        },
+        true // it will run first
+      );
+
+      document.querySelector("#river").addEventListener(
+        "click",
+        e => {
+          console.log("clicked on river image");
+        },
+        false
+      ); */
+
+      // STOP PROPAGATION
+      console.log("***STOP PROPAGATION***");
+      /* document.querySelector("#images").addEventListener(
+        "click",
+        e => {
+          console.log("clicked on ul");
+        },
+        false
+      );
+
+      document.querySelector("#river").addEventListener(
+        "click",
+        e => {
+          // event bubbling will not happen
+          e.stopPropagation();
+          console.log("clicked on river image");
+        },
+        false
+      ); */
+
+      // PREVENT DEFAULT
+      console.log("***PREVENT DEFAULT***");
+      document.querySelector("#google").addEventListener(
+        "click",
+        e => {
+          e.preventDefault();
+          // it will stop the default behaviour of the element
+          console.log("clicked");
+          e.stopPropagation();
+        },
+        false
+      );
+
+      // TARGET
+      console.log("***TARGET***");
+      document.querySelector("#images").addEventListener("click", e => {
+        // console.log(e.target.parentElement);
+        /*   e.target.parentElement.parentElement.removeChild(
+          e.target.parentElement
+        ); */
+        if (e.target.tagName === "IMG") {
+          e.target.parentElement.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

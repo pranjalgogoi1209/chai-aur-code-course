@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Press key</title>
+  </head>
+  <body>
+    <h1>Press key and watch magic</h1>
+    <div></div>
+    <section></section>
+    <script>
+      const div = document.querySelector("div");
+      const keys = [];
+      window.addEventListener("keydown", e => {
+        keys.push(e.key);
+        div.innerHTML = `
+        <table border=1>
+            <thead>
+                <th>Key</th>
+                <th>Key Code</th>
+                <th>Code</th>
+            </thead>
+            <tbody>
+                <td>${e.key === " " ? "space" : e.key}</td>
+                <td>${e.keyCode}</td>
+                <td>${e.code}</td>
+            </tbody>
+        </table>
+        `;
+        div.nextElementSibling.innerHTML = `
+        ${keys.join("")}
+        `;
+      });
+    </script>
+  </body>
+</html>

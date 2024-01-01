@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIGITAL CLOCK</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5vw;
+      }
+      .clock {
+        border: 4px solid blue;
+        background-color: aliceblue;
+        height: 7vw;
+        width: 20vw;
+        border-radius: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        color: blue;
+        text-shadow: 0.1vw 0.1vw 0.1vw blue;
+        letter-spacing: 0.5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DIGITAL CLOCK</h1>
+    <div class="clock">
+      <h2></h2>
+    </div>
+    <script>
+      setInterval(() => {
+        const date = new Date();
+        const time = date.toLocaleTimeString();
+        const h2 = document.querySelector("h2");
+        h2.innerText = time;
+      }, 1000);
+    </script>
+  </body>
+</html>

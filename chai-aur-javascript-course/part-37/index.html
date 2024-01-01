@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async</title>
+  </head>
+  <body>
+    <h1>Pranjal Gogoi</h1>
+    <button class="stopTimeOut">Stop time out</button>
+    <button class="stopInterval">Stop Interval</button>
+    <button class="startInterval">Start Interval</button>
+
+    <script>
+      // SET TIME OUT
+      const h1 = document.querySelector("h1");
+      const bgColorTimeOut = setTimeout(() => {
+        h1.style.backgroundColor = "orange";
+      }, 3000);
+
+      // CLEAR TIME OUT
+      const stopTimeOutBtn = document.querySelector(".stopTimeOut");
+      stopTimeOutBtn.addEventListener("click", () => {
+        clearTimeout(bgColorTimeOut);
+      });
+
+      // SET INTERVAL
+      const h3 = document.createElement("h3");
+      document.querySelector("body").appendChild(h3);
+      let timeInterval = setInterval(() => {
+        h3.innerText = new Date().toLocaleTimeString();
+      }, 1000);
+      const stopIntervalBtn = document.querySelector(".stopInterval");
+      const startIntervalBtn = document.querySelector(".startInterval");
+
+      // CLEAR INTERVAL
+      stopIntervalBtn.addEventListener("click", () => {
+        clearInterval(timeInterval);
+      });
+      startIntervalBtn.addEventListener("click", () => {
+        timeInterval = setInterval(() => {
+          h3.innerText = new Date().toLocaleTimeString();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

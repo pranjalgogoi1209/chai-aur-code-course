@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API REQUEST</title>
+  </head>
+  <body>
+    Ready states XMLHttpRequest changes between states as it progresses. The
+    current state is accessible as xhr.readyState.
+    <br />
+    All states, as in the specification:
+    <div>
+      <ul>
+        <li>UNSENT = 0; // initial state</li>
+        <li>OPENED = 1; // open called</li>
+        <li>HEADERS_RECEIVED = 2; // response headers received</li>
+        <li>LOADING = 3; // response is loading (a data packet is received)</li>
+        <li>DONE = 4; // request complete</li>
+      </ul>
+      <div class="github">
+        <img height="50px" />
+        <h1>Name</h1>
+        <p>Bio</p>
+        <h3>Followers</h3>
+      </div>
+    </div>
+
+    <script>
+      const requestUrl = "https://api.github.com/users/pranjalgogoi1209";
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        // it will watch on ready state
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(this.responseText);
+          // here this reffering xhr obj
+          // JSON.parse() converts the string to json
+          console.log(data);
+          console.log(data.name);
+
+          const github = document.querySelector(".github");
+          github.firstElementChild.setAttribute("src", data.avatar_url);
+          github.querySelector("h1").innerText = data.name;
+          github.querySelector("p").innerText = data.bio;
+          github.querySelector("h3").innerText = data.followers;
+        }
+      };
+      xhr.open("GET", requestUrl);
+      xhr.send();
+      // send is here to call open
+    </script>
+  </body>
+</html>
