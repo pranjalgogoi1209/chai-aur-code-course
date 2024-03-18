@@ -2,6 +2,8 @@
 
     Apache is a free and open-source software that allows users to deploy their websites on the internet. It is one of the oldest and most reliable web server software maintained by the Apache Software Foundation, with the first version released in 1995. 
 
+
+
 # What is Apache Web Server ?
 
     Although we call Apache a web server, it is not a physical server, but rather a software that runs on an HTTP server. Its job is to establish a connection between a server and the browsers of website visitors (Firefox, Google Chrome, Safari, etc.) while delivering files back and forth between them (client-server structure). The Apache software is also compatible with any operating system, from Windows to Unix. 
