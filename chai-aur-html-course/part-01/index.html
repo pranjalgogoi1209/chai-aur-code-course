@@ -4,8 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Html Tutorial</title>
+    <style>
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+      }
+
+      li {
+        list-style-type: none;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a:hover {
+        color: blue;
+      }
+
+      .ul1,
+      .ul2 {
+        padding: 2vw;
+        li {
+          background-color: antiquewhite;
+          width: 20vw;
+          height: 5vw;
+          margin-top: 1vw;
+        }
+      }
+    </style>
   </head>
   <body>
     <h1>LIVE SERVER PREVIEW | live server preview</h1>
+    <ul class="ul1">
+      <li><a href="www.facebook.com">Home</a></li>
+      <li><a href="www.facebook.com">About</a></li>
+      <li><a href="www.facebook.com">Contact</a></li>
+    </ul>
+
+    <ul class="ul2">
+      <a href="www.facebook.com"><li>Home</li></a>
+      <a href="www.facebook.com"><li>About</li></a>
+      <a href="www.facebook.com"><li>Contact</li></a>
+    </ul>
   </body>
 </html>
